@@ -1,5 +1,7 @@
 <h1>Listing Albums</h1>
  
+<%= link_to 'Add new album', new_album_path %>
+
 <table>
   <tr>
     <th>Artist</th>
@@ -15,7 +17,7 @@
       <td><%= album.album_title %></td>
       <td><%= album.year_released %></td>
       <td><%= album.genre %></td>
-      <td><%= link_to 'Show', albums_path(album) %></td>
+      <td><%= link_to 'Show', album_path(album) %></td>
     </tr>
   <% end %>
 </table>
