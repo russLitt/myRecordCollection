@@ -1,0 +1,21 @@
+<h1>Listing Albums</h1>
+ 
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Album title</th>
+    <th>Year released</th>
+    <th>Genre</th>
+    <th></th>
+  </tr>
+ 
+  <% @albums.each do |album| %>
+    <tr>
+      <td><%= album.artist %></td>
+      <td><%= album.album_title %></td>
+      <td><%= album.year_released %></td>
+      <td><%= album.genre %></td>
+      <td><%= link_to 'Show', albums_path(album) %></td>
+    </tr>
+  <% end %>
+</table>
