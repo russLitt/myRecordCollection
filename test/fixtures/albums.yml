@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  artist: MyString
+  album_title: MyString
+  year_released: 2020-06-08
+  genre: MyString
+
+two:
+  artist: MyString
+  album_title: MyString
+  year_released: 2020-06-08
+  genre: MyString
