@@ -18,6 +18,7 @@
       <td><%= album.year_released %></td>
       <td><%= album.genre %></td>
       <td><%= link_to 'Show', album_path(album) %></td>
+      <td><%= link_to 'Edit', edit_album_path(album) %></td>
     </tr>
   <% end %>
 </table>
