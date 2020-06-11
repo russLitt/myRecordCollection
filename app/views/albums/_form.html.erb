@@ -1,4 +1,4 @@
-<%= form_with model: @album, local: true do |form| %>
+<%= bootstrap_form_with(model: @album, local: true) do |form| %>
 
 <% if @album.errors.any? %>
     <div id="error_explanation">
@@ -15,7 +15,7 @@
   <% end %>
 
   <p>
-    <%= form.label :artist %><br>
+    <!-- <%= form.label :artist %><br> -->
     <%= form.text_field :artist %>
   </p>
  
