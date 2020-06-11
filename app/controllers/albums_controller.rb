@@ -1,6 +1,8 @@
 class AlbumsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
     def index
-      @albums = Album.all
+      @albums = Album.order(sort_column + " " + sort_direction)
     end
 
     def show
@@ -43,7 +45,15 @@ class AlbumsController < ApplicationController
     end
 
     private
-        def album_params
+      def album_params
         params.require(:album).permit(:artist, :album_title, :year_released, :genre)
-  end
-end
+      end
+  
+      def sort_column
+        Album.column_names.include?(params[:sort]) ? params[:sort] : "artist"
+      end
+  
+      def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      end
+    end
