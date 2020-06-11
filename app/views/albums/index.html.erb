@@ -8,7 +8,7 @@
     <th>Album title</th>
     <th>Year released</th>
     <th>Genre</th>
-    <th></th>
+    <th colspan="3">Actions</th>
   </tr>
  
   <% @albums.each do |album| %>
@@ -19,6 +19,9 @@
       <td><%= album.genre %></td>
       <td><%= link_to 'Show', album_path(album) %></td>
       <td><%= link_to 'Edit', edit_album_path(album) %></td>
+      <td><%= link_to 'Destroy', album_path(album),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
