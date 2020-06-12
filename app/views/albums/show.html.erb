@@ -21,6 +21,11 @@
       <%= @album.genre %>
     </p>
 
+    <p>
+      <strong>Notes:</strong>
+      <%= @album.notes %>
+    </p>
+
     <%= link_to 'Back to collection', albums_path %> |
     <%= link_to 'Edit album', edit_album_path(@album) %>
   </div>
