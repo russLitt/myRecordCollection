@@ -1,2 +1,11 @@
-<h1 class="jumbotron">Welcome to My Record Collection</h1>
-<%= link_to 'My Collection', controller: 'albums' %>
+<h1 class="jumbotron text-center">Welcome to My Record Collection</h1>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-6">
+            <%= link_to 'My Collection', controller: 'albums' %>
+        </div>
+        <div class="col-6">
+            <%= link_to 'My Wishlist', controller: 'albums' %>
+        </div>
+    </div>
+</div>

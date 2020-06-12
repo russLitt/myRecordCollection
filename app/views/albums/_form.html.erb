@@ -1,8 +1,8 @@
 <div class="row">
-<div class="col-sm-4">
-<%= bootstrap_form_with(model: @album, local: true) do |form| %>
+  <div class="col-sm-4">
+    <%= bootstrap_form_with(model: @album, local: true) do |form| %>
 
-<% if @album.errors.any? %>
+    <% if @album.errors.any? %>
     <div id="error_explanation">
       <h2>
         <h3>WARNING!</h3>
@@ -11,20 +11,21 @@
       </h2>
       <ul>
         <% @album.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-    <br> 
+    <br>
     <%= form.text_field :artist %>
     <%= form.text_field :album_title %>
     <%= form.text_field :year_released %>
     <%= form.text_field :genre %>
+    <!-- <%= form.select :condition, ['new','used'] %> -->
 
     <%= form.submit %>
 
-<% end %>
-</div>
+    <% end %>
+  </div>
 </div>
