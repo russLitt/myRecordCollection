@@ -46,7 +46,7 @@ class AlbumsController < ApplicationController
 
     private
       def album_params
-        params.require(:album).permit(:artist, :album_title, :year_released, :genre, :notes)
+        params.require(:album).permit(:artist, :album_title, :year_released, :genre, :grade, :notes)
       end
   
       def sort_column

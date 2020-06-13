@@ -22,8 +22,9 @@
     <%= form.text_field :album_title %>
     <%= form.text_field :year_released %>
     <%= form.text_field :genre %>
+    <%= form.select :grade, ['', 'Poor (P) or Fair (F)', 'Good (G)', 'Very Good (VG)',
+                      'Very Good Plus (VG+)', 'Excellent (E)', 'Near Mint (NM)', 'Mint (M)'] %>
     <%= form.text_area :notes %>
-    <!-- <%= form.select :condition, ['new','used'] %> -->
 
     <%= form.submit %>
 
