@@ -3,11 +3,17 @@
         <div class="col-md">
             <h1>Search Results</h1>
             <br>
+
             <% @albums.each do |album| %>
+
+            <% if album.artist.nil? %>
+            <div>no</div>
+            <% end %>
 
             <%= album.artist %> <%= link_to album.album_title, album_path(album) %><br>
 
             <% end %>
+
             <br>
             <%= link_to 'Back to collection', albums_path %>
         </div>
