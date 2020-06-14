@@ -1,7 +1,15 @@
-<h1>Search Results</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <h1>Search Results</h1>
+            <br>
+            <% @albums.each do |album| %>
 
-<!-- <% @albums.each do |album| %>   -->
+            <%= album.artist %> <%= link_to album.album_title, album_path(album) %><br>
 
-<%= @album.album_title %>
-
-<!-- <% end %> -->
+            <% end %>
+            <br>
+            <%= link_to 'Back to collection', albums_path %>
+        </div>
+    </div>
+</div>
