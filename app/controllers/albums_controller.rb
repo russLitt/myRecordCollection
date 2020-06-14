@@ -44,6 +44,15 @@ class AlbumsController < ApplicationController
         redirect_to albums_path
     end
 
+    def search
+      if params[:search].blank?  
+        redirect_to(search_page_path, alert: "Empty field!") and return  
+      else  
+        @parameter = params[:search].downcase  
+        @albums = Album.all.where("lower(album_title) LIKE :search", search: @parameter) 
+      end  
+    end
+
     private
       def album_params
         params.require(:album).permit(:artist, :album_title, :year_released, :genre, :grade, :notes)

@@ -2,7 +2,16 @@
 
 <div class="container" style="padding-bottom: 20px">
   <div class="row">
-    <%= link_to 'Add new album', new_album_path %>
+    <div class="col-sm">
+      <!-- <h6>Search:</h6> -->
+      <%= form_tag(search_page_path, method: :get) do %>
+      <%= text_field_tag(:search, params[:search], placeholder: "Search") %>
+      <%= submit_tag ("Search") %>
+      <% end %>
+    </div>
+    <div class="col-sm">
+      <%= link_to 'Add new album', new_album_path %>
+    </div>
   </div>
 </div>
 
