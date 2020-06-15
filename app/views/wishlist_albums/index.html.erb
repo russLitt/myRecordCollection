@@ -1,21 +1,51 @@
 <h1 class="jumbotron">Wishlist albums</h1>
 
-<%= link_to 'New wishlist album', new_wishlist_album_path %>
-<table>
-  <tr>
-    <th>Artist</th>
-    <th>Album title</th>
-    <th colspan="3">Actions</th>
-  </tr>
- 
-  <% @wishlist_albums.each do |wishlist_album| %>
-    <tr>
-      <td><%= wishlist_album.artist %></td>
-      <td><%= wishlist_album.album_title %></td>
-      <td><%= link_to 'Edit', edit_wishlist_album_path(wishlist_album) %></td>
-      <td><%= link_to 'Destroy', wishlist_album_path(wishlist_album),
+<div class="container" style="padding-bottom: 20px">
+  <div class="row">
+    <div class="col-sm">
+      <% if flash[:notice] %>
+      <div class="notice" style="color:Tomato;"><%= flash[:notice] %>
+        <% end %>
+        <%= form_tag(search_page_path, method: :get) do %>
+        <%= search_field_tag :search, params[:search], placeholder: "Search by artist" %>
+        <%= button_tag 'Search', :name => nil %>
+        <% end %>
+      </div>
+      <div class="col-sm text-right">
+        <%= button_to 'New wishlist album', new_wishlist_album_path %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="table-responsive-sm container">
+    <table class="table table-sm table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col"><%= sortable 'artist' %></th>
+          <th scope="col"><%= sortable 'album_title' %></th>
+          <th scope="col" colspan="3">Actions</th>
+        </tr>
+      </thead>
+
+      <% @wishlist_albums.each do |wishlist_album| %>
+      <tr>
+        <td><%= wishlist_album.artist %></td>
+        <td><%= wishlist_album.album_title %></td>
+        <td><%= link_to 'Edit', edit_wishlist_album_path(wishlist_album) %></td>
+        <td>
+          <%= link_to 'Delete', wishlist_album_path(wishlist_album),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+              data: { confirm: 'Are you sure you want to remove '+ wishlist_album.album_title + ' from your wishlist?' } %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="container">
+    <div class="row" style="padding-bottom: 20px">
+      <%= link_to 'Back to home', welcome_index_path %>
+    </div>
+  </div>

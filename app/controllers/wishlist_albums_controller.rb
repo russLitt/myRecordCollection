@@ -1,6 +1,8 @@
 class WishlistAlbumsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
     def index
-      @wishlist_albums = WishlistAlbum.all
+      @wishlist_albums = WishlistAlbum.order(sort_column + " " + sort_direction)
     end
 
     def show
@@ -45,6 +47,14 @@ class WishlistAlbumsController < ApplicationController
     private
     def wishlist_album_params
       params.require(:wishlist_album).permit(:artist, :album_title)
+    end
+
+    def sort_column
+      Album.column_names.include?(params[:sort]) ? params[:sort] : "artist"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
 end
