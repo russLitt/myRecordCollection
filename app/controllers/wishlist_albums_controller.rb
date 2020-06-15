@@ -19,7 +19,7 @@ class WishlistAlbumsController < ApplicationController
       @wishlist_album = WishlistAlbum.new(wishlist_album_params)
        
         if @wishlist_album.save
-          redirect_to @wishlist_album
+          redirect_to action: 'index'
         else
           render 'new'
         end
