@@ -1,1 +1,22 @@
 <h1 class="jumbotron">Wishlist albums</h1>
+
+<%= link_to 'New wishlist album', new_wishlist_album_path %>
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Album title</th>
+    <th colspan="3">Actions</th>
+  </tr>
+ 
+  <% @wishlist_albums.each do |wishlist_album| %>
+    <tr>
+      <td><%= wishlist_album.artist %></td>
+      <td><%= wishlist_album.album_title %></td>
+      <td><%= link_to 'Show', wishlist_album_path(wishlist_album) %></td>
+      <td><%= link_to 'Edit', edit_wishlist_album_path(wishlist_album) %></td>
+      <td><%= link_to 'Destroy', wishlist_album_path(wishlist_album),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
