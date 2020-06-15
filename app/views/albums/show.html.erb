@@ -22,7 +22,7 @@
         <%= @album.notes %>
       </p>
 
-      <%= link_to 'Back to collection', albums_path %> |
-      <%= link_to 'Edit album', edit_album_path(@album) %>
+      <%= link_to 'Edit album', edit_album_path(@album), class: "btn btn-outline-primary" %>
+      <%= link_to 'Back to collection', albums_path, class: "btn btn-outline-primary" %> 
     </div>
   </div>
