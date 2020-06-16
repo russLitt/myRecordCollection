@@ -43,6 +43,16 @@ class WishlistAlbumsController < ApplicationController
 
       redirect_to wishlist_albums_path
     end
+    
+    def search
+      if params[:search].blank?  
+        flash[:notice] = "Error: Please enter an artist!!!"
+        redirect_to :wishlist_albums
+      else  
+        wishlist_album_params = params[:search].downcase  
+        @wishlist_albums = WishlistAlbum.all.where("lower(artist) LIKE :search", search: wishlist_album_params) 
+      end  
+    end
 
     private
     def wishlist_album_params
