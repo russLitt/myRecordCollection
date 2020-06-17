@@ -55,8 +55,7 @@ class AlbumsController < ApplicationController
     end
 
     def move
-      @album = Album.new(wishlist_album_params)
-      @album.save
+      @album = Album.new(wishlist_album_params[:id])
 
       @wishlist_album = WishlistAlbum.find(params[:id])
       @wishlist_album.destroy
