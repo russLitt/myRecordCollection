@@ -25,7 +25,9 @@
       <td class="text-right"><%= link_to 'Edit', edit_wishlist_album_path(wishlist_album) %></td>
       <td class="text-right"><%= link_to 'Move', move_album_path(wishlist_album), 
               method: :move,
-              data: {confirm: 'move this album to collection?'} %></td>
+              data: {confirm: "Move "+ wishlist_album.album_title + " to collection?\n\n" +
+            "Note: This will remove the album from wishlist and the album \ndetails will need to be " +
+          "re-entered on the following form."} %></td>
       <td class="text-center">
         <%= link_to 'Delete', wishlist_album_path(wishlist_album),
               method: :delete,
