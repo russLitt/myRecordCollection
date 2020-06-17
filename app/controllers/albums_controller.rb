@@ -54,9 +54,25 @@ class AlbumsController < ApplicationController
       end  
     end
 
+    def move
+      #@wishlist_album = WishlistAlbum.find(params[:id])
+      #@wishlist_album.destroy
+    
+      @album = Album.new(wishlist_album_params)
+      @album.save
+
+      @wishlist_album = WishlistAlbum.find(params[:id])
+      @wishlist_album.destroy
+    
+    end
+
     private
       def album_params
         params.require(:album).permit(:artist, :album_title, :year_released, :genre, :grade, :notes)
+      end
+
+      def wishlist_album_params
+        params.permit(:wishlist_album).permit(:artist, :album_title)
       end
   
       def sort_column

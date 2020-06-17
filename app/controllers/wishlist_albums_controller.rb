@@ -54,6 +54,15 @@ class WishlistAlbumsController < ApplicationController
       end  
     end
 
+    def move
+
+      
+     # @wishlist_album = WishlistAlbum.find(params[:id])
+      #@wishlist_album = Album.new(wishlist_album_params)
+      
+      # @album.save
+    end
+
     private
     def wishlist_album_params
       params.require(:wishlist_album).permit(:artist, :album_title)

@@ -17,8 +17,6 @@
   </div>
 </div>
 
-
-
 <div class="table-responsive-sm container">
   <table class="table table-sm table-hover">
     <thead class="thead-light">
@@ -34,6 +32,9 @@
       <td><%= wishlist_album.artist %></td>
       <td><%= wishlist_album.album_title %></td>
       <td><%= link_to 'Edit', edit_wishlist_album_path(wishlist_album) %></td>
+      <td><%= link_to 'Move', move_album_path(wishlist_album), 
+              method: :move,
+              data: {confirm: 'move this album to collection?'} %></td>
       <td>
         <%= link_to 'Delete', wishlist_album_path(wishlist_album),
               method: :delete,
