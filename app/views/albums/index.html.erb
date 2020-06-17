@@ -6,7 +6,7 @@
       <% if flash[:notice] %>
       <div class="notice" style="color:Tomato;"><%= flash[:notice] %></div>
       <% end %>
-      <%= form_tag(collection_search_page_path, method: :get) do %>
+      <%= form_tag(search_page_path, method: :get) do %>
       <%= search_field_tag :search, params[:search], placeholder: "Search by artist" %>
       <%= button_tag 'Search', :name => nil, class: "btn btn-outline-primary" %>
       <% end %>

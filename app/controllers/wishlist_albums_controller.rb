@@ -43,24 +43,8 @@ class WishlistAlbumsController < ApplicationController
 
       redirect_to wishlist_albums_path
     end
-    
-    def search
-      if params[:search].blank?  
-        flash[:notice] = "Error: Please enter an artist!!!"
-        redirect_to :wishlist_albums
-      else  
-        wishlist_album_params = params[:search].downcase  
-        @wishlist_albums = WishlistAlbum.all.where("lower(artist) LIKE :search", search: wishlist_album_params) 
-      end  
-    end
 
     def move
-
-      
-     # @wishlist_album = WishlistAlbum.find(params[:id])
-      #@wishlist_album = Album.new(wishlist_album_params)
-      
-      # @album.save
     end
 
     private
@@ -69,7 +53,7 @@ class WishlistAlbumsController < ApplicationController
     end
 
     def sort_column
-      Album.column_names.include?(params[:sort]) ? params[:sort] : "artist"
+      WishlistAlbum.column_names.include?(params[:sort]) ? params[:sort] : "artist"
     end
 
     def sort_direction

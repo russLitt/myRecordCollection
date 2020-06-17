@@ -2,15 +2,6 @@
 
 <div class="container" style="padding-bottom: 20px">
   <div class="row">
-    <div class="col-sm">
-      <% if flash[:notice] %>
-      <div class="notice" style="color:Tomato;"><%= flash[:notice] %></div>
-      <% end %>
-      <%= form_tag(wishlist_search_page_path, method: :get) do %>
-      <%= search_field_tag :search, params[:search], placeholder: "Search by artist" %>
-      <%= button_tag 'SearchH', :name => nil, class: "btn btn-outline-primary" %>
-      <% end %>
-    </div>
     <div class="col-sm text-right">
       <%= button_to 'New wishlist album', new_wishlist_album_path, class: "btn btn-outline-primary" %>
     </div>

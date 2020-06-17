@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   resources :albums, :wishlist_albums
 
   get 'welcome/index'
-  get 'albums/search' => 'albums#search', :as => 'collection_search_page'
-  get 'wishlist_albums/search' => 'wishlist_albums#search', :as => 'wishlist_search_page'
+  get '/search' => 'albums#search', :as => 'search_page'
   get 'albums/:id/move' => 'albums#move', :as => 'move_album'
 
   post 'albums/new' => 'albums#new', :as => 'new_album_page'
