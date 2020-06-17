@@ -2,6 +2,39 @@
 
     <h1>Move Album to Collection</h1>
 
-    <%= render 'form' %>
-
-</div>
+<div class="row">
+    <div class="col-sm-4">
+      <%= bootstrap_form_with(model: @album, local: true) do |form| %>
+  
+      <% if @album.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <h3>WARNING!</h3>
+          <%= pluralize(@album.errors.count, "error") %> prohibited
+          this album from being saved:
+        </h2>
+        <ul>
+          <% @album.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+  
+      <br>
+      <%= form.text_field :artist %>
+      <%= form.text_field :album_title %>
+      <%= form.text_field :year_released %>
+      <%= form.text_field :genre %>
+      <%= form.select :grade, ['', 'Poor (P) or Fair (F)', 'Good (G)', 'Very Good (VG)',
+                        'Very Good Plus (VG+)', 'Excellent (E)', 'Near Mint (NM)', 'Mint (M)'] %>
+      <%= form.text_area :notes %>
+  
+      <div style="padding-bottom: 20px">
+        <%= form.submit "Add to collection" %> <%= link_to 'Back to collection', albums_path, class: "btn btn-outline-primary" %>
+      </div>
+  
+      <% end %>
+    </div>
+  </div>
+  </div> 
