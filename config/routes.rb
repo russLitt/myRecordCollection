@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+
+  devise_for :users
   resources :albums, :wishlist_albums
 
   get 'welcome/index'

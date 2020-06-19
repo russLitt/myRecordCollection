@@ -26,6 +26,7 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'bootstrap_form', "~> 4.0"
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
