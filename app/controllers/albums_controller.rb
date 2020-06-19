@@ -48,9 +48,17 @@ class AlbumsController < ApplicationController
       if params[:search].blank?  
         flash[:notice] = "Error: Please enter an artist!"
         redirect_to :albums
-      else  
+      else 
         album_params = params[:search].downcase  
-        @albums = Album.all.where("lower(artist) LIKE :search", search: album_params) 
+        @albums = Album.all.where("lower(artist) LIKE :search", search: album_params)
+        # flash[:notice] = "no artist"
+        # redirect_to search_page
+      # else 
+      #   album_params = params[:search].exists?
+      #   puts 'got to else'
+      #   @albums = Album.all.where("lower(artist) LIKE :search", search: album_params).exists? == false
+      #   flash[:notice] = "no artist"
+      #   redirect_to :albums
       end  
     end
 
