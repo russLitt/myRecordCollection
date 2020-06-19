@@ -11,7 +11,7 @@
       <tr>
         <th scope="col"><%= sortable 'artist' %></th>
         <th scope="col"><%= sortable 'album_title' %></th>
-        <th scope="col" colspan="3" class="text-center" style="width: 30%;">Actions</th>
+        <th scope="col" colspan="3" class="text-center" style="width: 25%;">Actions</th>
       </tr>
     </thead>
 
@@ -23,7 +23,7 @@
       <td class="text-right"><%= link_to 'Move to collection', move_album_path(wishlist_album), 
               method: :move,
               data: {confirm: "Move "+ wishlist_album.album_title + " to collection?\n\n" +
-            "Note: This will remove the album from wishlist and the album \ndetails will need to be " +
+            "Note: This will remove the album from your wish list and the album \ndetails will need to be " +
           "re-entered on the following form."} %></td>
       <td class="text-right">
         <%= link_to 'Delete', wishlist_album_path(wishlist_album),
