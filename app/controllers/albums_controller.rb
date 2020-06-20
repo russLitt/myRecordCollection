@@ -46,7 +46,7 @@ class AlbumsController < ApplicationController
 
     def search
       if params[:search].blank?  
-        flash[:notice] = "Error: Please enter an artist!"
+        flash[:alert] = "Error: Please enter an artist!"
         redirect_to :albums
       else 
         album_params = params[:search].downcase  

@@ -3,8 +3,8 @@
 <div class="container" style="padding-bottom: 20px">
   <div class="row">
     <div class="col-sm" id="album_search_bar">
-      <% if flash[:notice] %>
-      <div class="notice" style="color:Tomato;"><%= flash[:notice] %></div>
+      <% if flash[:alert] %>
+      <div class="notice" style="color:Tomato;"><%= flash[:alert] %></div>
       <% end %>
       <%= form_tag(search_page_path, method: :get) do %>
       <%= search_field_tag :search, params[:search], placeholder: "Search by artist" %>
