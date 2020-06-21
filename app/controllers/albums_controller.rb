@@ -53,20 +53,11 @@ class AlbumsController < ApplicationController
       else 
         album_params = params[:search].downcase  
         @albums = Album.all.where("lower(artist) LIKE :search", search: album_params)
-        # flash[:notice] = "no artist"
-        # redirect_to search_page
-      # else 
-      #   album_params = params[:search].exists?
-      #   puts 'got to else'
-      #   @albums = Album.all.where("lower(artist) LIKE :search", search: album_params).exists? == false
-      #   flash[:notice] = "no artist"
-      #   redirect_to :albums
       end  
     end
 
     def move
       @album = WishlistAlbum.find(params[:id])
-      
       @album = Album.new(wishlist_album_params)
 
       @wishlist_album = WishlistAlbum.find(params[:id])
