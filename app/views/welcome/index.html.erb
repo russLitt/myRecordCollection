@@ -1,12 +1,14 @@
-<div class="float-right" style="padding-right: 20px;">
+<div class="float-left" style="padding-top: 5px; padding-left: 20px;">
     <% if user_signed_in? %>
     Logged in as <strong><%= current_user.email %></strong>
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
+</div>
+<div class="float-right" style="padding-top: 5px; padding-right: 20px;">
+<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
 </div>
 <h1 class="jumbotron text-center">Welcome to My Record Collection</h1>
 <div class="container text-center">
@@ -26,7 +28,7 @@
         <div class="col-4">
             <i class='far fa-question-circle' style='font-size:64px; color:lightslategray; padding-bottom: 10px'></i>
             <div>
-                <%= link_to 'Get Help Here', wishlist_albums_path, class: "btn btn-outline-primary" %>
+                <%= link_to 'Get Help Here', help_page_path, class: "btn btn-outline-primary" %>
             </div>
         </div>
     </div>
