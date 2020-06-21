@@ -3,6 +3,7 @@ class WishlistAlbumsController < ApplicationController
 
     def index
       @wishlist_albums = WishlistAlbum.order(sort_column + " " + sort_direction)
+      @wishlist_albums = current_user.wishlist_albums
     end
 
     def show
@@ -10,7 +11,7 @@ class WishlistAlbumsController < ApplicationController
     end
 
     def new
-      @wishlist_album = WishlistAlbum.new
+      @wishlist_album = current_user.wishlist_albums.new
     end
 
     def edit
@@ -18,7 +19,7 @@ class WishlistAlbumsController < ApplicationController
     end
 
     def create
-      @wishlist_album = WishlistAlbum.new(wishlist_album_params)
+      @wishlist_album = WishlistAlbum.new(wishlist_album_params.merge(user_id: current_user.id))
        
         if @wishlist_album.save
           redirect_to action: 'index'
