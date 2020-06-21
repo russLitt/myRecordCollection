@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_19_145739) do
+ActiveRecord::Schema.define(version: 2020_06_21_011957) do
 
   create_table "albums", force: :cascade do |t|
     t.string "artist"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_06_19_145739) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "notes"
     t.string "grade"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_06_19_145739) do
     t.string "album_title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
 end

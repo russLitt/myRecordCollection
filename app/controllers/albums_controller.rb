@@ -3,14 +3,16 @@ class AlbumsController < ApplicationController
 
     def index
       @albums = Album.order(sort_column + " " + sort_direction)
+      @albums = current_user.albums
     end
 
     def show
+      
       @album = Album.find(params[:id])
     end
 
     def new
-      @album = Album.new
+      @album = current_user.albums.new
     end
 
     def edit
@@ -18,7 +20,7 @@ class AlbumsController < ApplicationController
     end
 
     def create
-      @album = Album.new(album_params)
+      @album = Album.new(album_params.merge(user_id: current_user.id))
  
       if @album.save
         redirect_to @album
