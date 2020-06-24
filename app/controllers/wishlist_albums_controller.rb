@@ -2,8 +2,7 @@ class WishlistAlbumsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
     def index
-      @wishlist_albums = WishlistAlbum.order(sort_column + " " + sort_direction)
-      @wishlist_albums = current_user.wishlist_albums
+      @wishlist_albums = current_user.wishlist_albums.order(sort_column + " " + sort_direction)
     end
 
     def show
