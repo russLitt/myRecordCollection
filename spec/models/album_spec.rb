@@ -24,8 +24,14 @@ RSpec.describe Album, type: :model do
     end
 
     it 'year released should be a four digit number' do
-      if subject.year_released != 1993
-        expect{subject}.to have_attributes(year_released: 1993) 
+      if subject.year_released = 199
+        expect(subject).to_not be_valid
+      end
+    end
+
+    it 'year released should be a four digit number' do
+      if subject.year_released = 19993
+        expect(subject).to_not be_valid
       end
     end
 end
