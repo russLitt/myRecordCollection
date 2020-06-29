@@ -50,7 +50,7 @@ class AlbumsController < ApplicationController
         redirect_to :albums
       else 
         album_params = params[:search].downcase  
-        @albums = Album.all.where("lower(artist) LIKE :search", search: album_params)
+        @albums = current_user.albums.all.where("lower(artist) LIKE :search", search: album_params)
       end  
     end
 
