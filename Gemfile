@@ -28,7 +28,6 @@ gem 'bootstrap_form', "~> 4.0"
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'devise'
-#gem 'rspec-rails'
 
 group :development, :test do  
   gem 'rspec-rails'

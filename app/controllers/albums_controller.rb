@@ -64,7 +64,7 @@ class AlbumsController < ApplicationController
 
     private
       def album_params
-        params.require(:album).permit(:artist, :album_title, :year_released, :genre, :grade, :notes)
+        params.require(:album).permit(:artist, :album_title, :year_released, :genre, :grade, :notes, :album_image)
       end
 
       def wishlist_album_params

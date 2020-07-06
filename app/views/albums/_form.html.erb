@@ -25,6 +25,7 @@
     <%= form.select :grade, ['', 'Poor (P) or Fair (F)', 'Good (G)', 'Very Good (VG)',
                       'Very Good Plus (VG+)', 'Excellent (E)', 'Near Mint (NM)', 'Mint (M)'] %>
     <%= form.text_area :notes %>
+    <%= form.file_field :album_image %>
 
     <div style="padding-bottom: 20px">
       <%= form.submit %> <%= link_to 'Back to collection', albums_path, class: "btn btn-outline-primary" %>
