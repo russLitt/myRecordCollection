@@ -2,10 +2,13 @@
   <div class="container text-center">
     <div class="col-md">
 
+      <% if @album.album_image.blank? %>
+      <p></p>
+      <% else %>
       <p>
-        <strong>Album image:</strong>
-        <%= image_tag @album.album_image %>
+        <%= image_tag @album.album_image, style: 'height:300px;width:300px;' %>
       </p>
+      <% end %>
 
       <p>
         <strong>Year released:</strong>
@@ -19,7 +22,7 @@
 
       <p>
         <strong>Grade:</strong>
-          <%= @album.grade %>
+        <%= @album.grade %>
       </p>
 
       <p>
@@ -28,6 +31,7 @@
       </p>
 
       <%= link_to 'Edit album', edit_album_path(@album), class: "btn btn-outline-primary" %>
-      <%= link_to 'Back to collection', albums_path, class: "btn btn-outline-primary" %> 
+      <%= link_to 'Back to collection', albums_path, class: "btn btn-outline-primary" %>
+      <br>
     </div>
   </div>
