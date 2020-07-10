@@ -1,13 +1,14 @@
-<div class="navbar" style="height: 50px;background-color:rgb(76, 90, 104)">
-    <div class="float-left" style="padding-left: 20px; color:whitesmoke">
+<div class="navbar navbar-default" style="height: 50px;background-color:rgb(76, 90, 104)">
+    <div class="navbar-header float-left" style="padding-left: 20px; color:whitesmoke">
         <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>
+        <%= link_to 'My Record Collection', welcome_index_path, :class => 'navbar-link', :style => "color:whitesmoke; font-size: 20px" %>
     </div>
+
     <div class="float-right" style="padding-right: 20px; color:whitesmoke">
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link', :style => "color:whitesmoke" %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', :style => "color:whitesmoke"  %>
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link', :style => "color:whitesmoke" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', :style => "color:whitesmoke; padding-left: 10px;"  %>
         <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', :style => "color:whitesmoke"  %> |
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', :style => "color:whitesmoke"  %>
         <%= link_to "Login", new_user_session_path, :class => 'navbar-link', :style => "color:whitesmoke"  %>
         <% end %>
     </div>
