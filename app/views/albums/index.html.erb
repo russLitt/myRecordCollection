@@ -9,11 +9,11 @@
     
       <%= form_tag(search_page_path, method: :get) do %>
       <%= search_field_tag :search, params[:search], placeholder: "Search by artist" %>
-      <%= button_tag 'Search', :name => nil, class: "btn btn-outline-primary search-btn" %>
+      <%= button_tag 'Search', :name => nil, class: "btn btn-outline-primary search-btn primary-font" %>
       <% end %>
     </div>
     <div class="col-sm text-right">
-      <%= button_to 'Add new album', new_album_path, class: "btn btn-outline-primary" %>
+      <%= button_to 'Add new album', new_album_path, class: "btn btn-outline-primary primary-font" %>
     </div>
   </div>
 </div>
@@ -45,7 +45,7 @@
   </table>
   <div class="container">
     <div class="row" style="padding-bottom: 20px">
-      <%= link_to 'Back to home', welcome_index_path, class: "btn btn-outline-primary" %>
+      <%= link_to 'Back to home', welcome_index_path, class: "btn btn-outline-primary primary-font" %>
     </div>
   </div>
 </div>
