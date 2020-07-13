@@ -1,4 +1,4 @@
-<h1 class="jumbotron text-center">Login to My Record Collection</h1>
+<h1 class="jumbotron text-center primary-font">Login to My Record Collection</h1>
 
 <div class="container text-center">
   <div class="form-row">
@@ -22,12 +22,10 @@
       <br>
 
       <div class="actions">
-        <%= f.submit "Login", class: "btn btn-outline-primary" %>
+        <%= f.submit "Login", class: "btn btn-outline-primary primary-font" %> <%= render "users/shared/links" %>
       </div>
       <% end %>
 
-      <br>
-      <%= render "users/shared/links" %>
       <br>
     </div>
   </div>

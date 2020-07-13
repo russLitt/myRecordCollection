@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-md-5">
         <%= bootstrap_form_with(model: @wishlist_album, local: true) do |form| %>
 
         <% if @wishlist_album.errors.any? %>
@@ -21,8 +21,10 @@
         <%= form.text_field :artist %>
         <%= form.text_field :album_title %>
 
-        <%= form.submit "Create wish list album" %> <%= link_to 'Back to wish list', wishlist_albums_path, class: "btn btn-outline-primary" %>
-
+        <%= form.submit class: "btn btn-outline-primary primary-font" %>
+        <%= link_to 'Back to wish list', wishlist_albums_path, class: "btn btn-outline-primary primary-font" %>
+        </br>
+        </br>
 
         <% end %>
     </div>
