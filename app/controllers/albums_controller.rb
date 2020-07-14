@@ -31,9 +31,9 @@ class AlbumsController < ApplicationController
       @album = Album.find(params[:id])
        
       if @album.update(album_params)
-          redirect_to @album
+        redirect_to @album
       else
-          render 'edit'
+        render 'edit'
       end
     end
 
