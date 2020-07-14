@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-8" id="album_search_bar">
       <% flash[:alert] %>
-    
+
       <%= form_tag(search_page_path, method: :get) do %>
       <%= search_field_tag :search, params[:search], placeholder: "Search by artist" %>
       <%= button_tag 'Search', :name => nil, class: "btn btn-outline-primary search-btn primary-font" %>
@@ -18,10 +18,10 @@
   </div>
 </div>
 
-<div class="table-responsive-sm container">
-  <table class="table table-sm table-hover">
+<div class="table-responsive-md container">
+  <table class="table table-md table-hover">
     <thead class="thead-light">
-      <tr>
+      <tr class="album-table-link">
         <th scope="col"><%= sortable "artist" %></th>
         <th scope="col"><%= sortable "album_title" %></th>
         <th scope="col"><%= sortable "year_released" %></th>
@@ -33,11 +33,11 @@
     <% @albums.each do |album| %>
     <tr>
       <td><%= album.artist %></td>
-      <td><%= link_to album.album_title, album_path(album) %></td>
+      <td><%= link_to album.album_title, album_path(album), class: "album-table-link" %></td>
       <td><%= album.year_released %></td>
       <td><%= album.genre %></td>
-      <td class="text-right"><%= link_to 'Edit', edit_album_path(album) %></td>
-      <td class="text-center"><%= link_to 'Delete', album_path(album),
+      <td class="text-right"><%= link_to 'Edit', edit_album_path(album), class: "album-table-link" %></td>
+      <td class="text-center"><%= link_to 'Delete', album_path(album), class: "album-table-link",
         method: :delete,
         data: { confirm: 'Are you sure you want to remove '+ album.album_title + ' from your collection?'} %></td>
     </tr>

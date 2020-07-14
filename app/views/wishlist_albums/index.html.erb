@@ -2,13 +2,13 @@
 
 <h1 class="jumbotron primary-font">Wish List Albums</h1>
 
-<div class="table-responsive-sm container">
+<div class="table-responsive-md container">
   <div class="row" style="padding-bottom: 20px">
-    <div class="col-sm text-right">
+    <div class="col-md text-right">
       <%= button_to 'New wish list album', new_wishlist_album_path, class: "btn btn-outline-primary primary-font" %>
     </div>
   </div>
-  <table class="table table-sm table-hover">
+  <table class="table table-md table-hover">
     <thead class="thead-light">
       <tr>
         <th scope="col"><%= sortable 'artist' %></th>

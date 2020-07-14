@@ -38,10 +38,10 @@ class AlbumsController < ApplicationController
     end
 
     def destroy
-        @album = Album.find(params[:id])
-        @album.destroy
+      @album = Album.find(params[:id])
+      @album.destroy
        
-        redirect_to albums_path
+      redirect_to albums_path
     end
 
     def search

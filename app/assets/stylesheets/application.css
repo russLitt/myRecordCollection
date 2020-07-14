@@ -16,18 +16,23 @@
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* .nav-link {
-   color: blue;
-} */
-
 .navbar-dark .navbar-nav .nav-link:hover {
-   color: rgb(70, 240, 141) !important;
-   opacity: 0.6;
+   color: rgb(5, 211, 5) !important;
    transition: 0.3s;
 }
 
-.sortable:hover {
-   color:pink;
-  
+.navbar-brand:hover {
+   color: rgb(5, 211, 5) !important;
    transition: 0.3s;
+}
+
+.album-table-link:hover {
+   color:rgb(5, 211, 5);
+   transition: 0.3s;
+   text-decoration: none;
+}
+
+.album_col_link:hover {
+   color: white;
+   text-decoration: none;
 }
