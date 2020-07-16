@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-md navbar-dark" style="height:60px;background-color:rgb(76, 90, 104)">
-    <div class="navbar-header primary-font navbar-brand" style="color:whitesmoke; font-size: 18px;">
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="navbar-header primary-font navbar-brand">
         <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>
     </div>
@@ -10,7 +10,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="nav navbar-nav justify-content-end" style="background-color:rgb(76, 90, 104); width: 100%;">
+        <ul class="nav navbar-nav justify-content-end">
             <li class="nav-item">
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link', :style => "color:whitesmoke; padding-left: 10px;" %>
             </li>
