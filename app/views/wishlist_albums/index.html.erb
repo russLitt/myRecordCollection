@@ -2,42 +2,45 @@
 
 <h1 class="jumbotron primary-font">Wish List Albums</h1>
 
-<div class="table-responsive-md container">
-  <div class="row" style="padding-bottom: 20px">
-    <div class="col-md text-right">
-      <%= button_to 'New wish list album', new_wishlist_album_path, class: "btn btn-outline-primary primary-font" %>
+<div class="container">
+  <div class="table-responsive-md">
+    <div class="row" style="padding-bottom: 20px">
+      <div class="col-md text-right">
+        <%= button_to 'New wish list album', new_wishlist_album_path, class: "btn btn-outline-primary primary-font" %>
+      </div>
     </div>
-  </div>
-  <table class="table table-md table-hover">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col"><%= sortable 'artist' %></th>
-        <th scope="col"><%= sortable 'album_title' %></th>
-        <th scope="col" colspan="3" class="text-center" style="width: 25%;">Actions</th>
-      </tr>
-    </thead>
+    <table class="table table-md table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col"><%= sortable 'artist' %></th>
+          <th scope="col"><%= sortable 'album_title' %></th>
+          <th scope="col" colspan="3" class="text-center" style="width: 25%;">Actions</th>
+        </tr>
+      </thead>
 
-    <% @wishlist_albums.each do |wishlist_album| %>
-    <tr>
-      <td><%= wishlist_album.artist %></td>
-      <td><%= wishlist_album.album_title %></td>
-      <td class="text-right"><%= link_to 'Edit', edit_wishlist_album_path(wishlist_album) %></td>
-      <td class="text-right"><%= link_to 'Move to collection', move_album_path(wishlist_album), 
+      <% @wishlist_albums.each do |wishlist_album| %>
+      <tr>
+        <td><%= wishlist_album.artist %></td>
+        <td><%= wishlist_album.album_title %></td>
+        <td class="text-right">
+          <%= link_to 'Edit', edit_wishlist_album_path(wishlist_album), class: "album-table-link" %></td>
+        <td class="text-right"><%= link_to 'Move to collection', move_album_path(wishlist_album), class: "album-table-link",
               method: :move,
               data: {confirm: "Move "+ wishlist_album.album_title + " to collection?\n\n" +
             "Note: This will remove the album from your wish list and the album \ndetails will need to be " +
           "re-entered on the following form."} %></td>
-      <td class="text-right">
-        <%= link_to 'Delete', wishlist_album_path(wishlist_album),
+        <td class="text-right">
+          <%= link_to 'Delete', wishlist_album_path(wishlist_album), class: "album-table-link",
               method: :delete,
               data: { confirm: 'Are you sure you want to remove '+ wishlist_album.album_title + ' from your wishlist?' } %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
-  <div class="container">
-    <div class="row" style="padding-bottom: 20px">
-      <%= link_to 'Back to home', welcome_index_path, class: "btn btn-outline-primary primary-font" %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+    <div class="container">
+      <div class="row" style="padding-bottom: 20px">
+        <%= link_to 'Back to home', welcome_index_path, class: "btn btn-outline-primary primary-font" %>
+      </div>
     </div>
   </div>
 </div>

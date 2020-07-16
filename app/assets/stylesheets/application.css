@@ -38,16 +38,16 @@
 
 .navbar-brand:hover {
    color: rgb(6, 155, 6) !important;
-   transition: 0.3s;
+   transition: 0.5s;
 }
+
+/* .nav-link:hover {
+   color: rgb(8, 20, 8) !important;
+   transition: 0.5s;
+} */
 
 .album-table-link:hover {
    color:rgb(6, 155, 6);
    transition: 0.5s;
-   text-decoration: none;
-}
-
-.album_col_link:hover {
-   color: white;
    text-decoration: none;
 }

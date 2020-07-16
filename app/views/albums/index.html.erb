@@ -4,7 +4,7 @@
 
 <div class="container" style="padding-bottom: 20px">
   <div class="row">
-    <div class="col-md-8" id="album_search_bar">
+    <div class="col-md-6" id="album_search_bar">
       <% flash[:alert] %>
 
       <%= form_tag(search_page_path, method: :get) do %>
@@ -12,40 +12,42 @@
       <%= button_tag 'Search', :name => nil, class: "btn btn-outline-primary search-btn primary-font" %>
       <% end %>
     </div>
-    <div class="col-md-4 text-right">
+    <div class="col-md-6 text-right">
       <%= button_to 'Add new album', new_album_path, class: "btn btn-outline-primary primary-font" %>
     </div>
   </div>
 </div>
 
-<div class="table-responsive-md container">
-  <table class="table table-md table-hover">
-    <thead class="thead-light">
-      <tr class="album-table-link">
-        <th scope="col"><%= sortable "artist" %></th>
-        <th scope="col"><%= sortable "album_title" %></th>
-        <th scope="col"><%= sortable "year_released" %></th>
-        <th scope="col"><%= sortable "genre" %></th>
-        <th scope="col" colspan="2" class="text-center">Actions</th>
-      </tr>
-    </thead>
+<div class="container">
+  <div class="table-responsive-md">
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr class="album-table-link">
+          <th scope="col"><%= sortable "artist" %></th>
+          <th scope="col"><%= sortable "album_title" %></th>
+          <th scope="col"><%= sortable "year_released" %></th>
+          <th scope="col"><%= sortable "genre" %></th>
+          <th scope="col" colspan="2" class="text-center">Actions</th>
+        </tr>
+      </thead>
 
-    <% @albums.each do |album| %>
-    <tr>
-      <td><%= album.artist %></td>
-      <td><%= link_to album.album_title, album_path(album), class: "album-table-link" %></td>
-      <td><%= album.year_released %></td>
-      <td><%= album.genre %></td>
-      <td class="text-right"><%= link_to 'Edit', edit_album_path(album), class: "album-table-link" %></td>
-      <td class="text-center"><%= link_to 'Delete', album_path(album), class: "album-table-link",
+      <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.artist %></td>
+        <td><%= link_to album.album_title, album_path(album), class: "album-table-link" %></td>
+        <td><%= album.year_released %></td>
+        <td><%= album.genre %></td>
+        <td class="text-right"><%= link_to 'Edit', edit_album_path(album), class: "album-table-link" %></td>
+        <td class="text-center"><%= link_to 'Delete', album_path(album), class: "album-table-link",
         method: :delete,
         data: { confirm: 'Are you sure you want to remove '+ album.album_title + ' from your collection?'} %></td>
-    </tr>
-    <% end %>
-  </table>
-  <div class="container">
-    <div class="row" style="padding-bottom: 20px">
-      <%= link_to 'Back to home', welcome_index_path, class: "btn btn-outline-primary primary-font" %>
+      </tr>
+      <% end %>
+    </table>
+    <div class="container">
+      <div class="row" style="padding-bottom: 20px">
+        <%= link_to 'Back to home', welcome_index_path, class: "btn btn-outline-primary primary-font" %>
+      </div>
     </div>
   </div>
 </div>
