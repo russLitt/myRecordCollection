@@ -4,13 +4,12 @@
         Logged in as <strong><%= current_user.email %></strong>
     </div>
 
-    <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="nav navbar-nav justify-content-end">
+        <ul class="navbar-nav justify-content-end">
             <li class="nav-item">
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link', :style => "color:whitesmoke; padding-left: 10px;" %>
             </li>
