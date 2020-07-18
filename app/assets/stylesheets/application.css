@@ -42,6 +42,14 @@
    text-decoration: none;
 }
 
+.pad-bottom-20 {
+   padding-bottom: 20px;
+}
+
+.width-25 {
+   width: 25%;
+}
+
 /* media queries */
 @media only screen and (max-width: 600px) {
    #album_search_bar {

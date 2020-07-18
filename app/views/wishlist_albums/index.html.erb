@@ -3,7 +3,7 @@
 <h1 class="jumbotron primary-font">Wish List Albums</h1>
 
 <div class="container">
-  <div class="row" style="padding-bottom: 20px">
+  <div class="row pad-bottom-20">
     <div class="col-md text-right">
       <%= button_to 'New wish list album', new_wishlist_album_path, class: "btn btn-outline-primary primary-font" %>
     </div>
@@ -17,7 +17,7 @@
         <tr>
           <th scope="col"><%= sortable 'artist' %></th>
           <th scope="col"><%= sortable 'album_title' %></th>
-          <th scope="col" colspan="3" class="text-center" style="width: 25%;">Actions</th>
+          <th scope="col" colspan="3" class="text-center width-25">Actions</th>
         </tr>
       </thead>
 
@@ -41,7 +41,7 @@
       <% end %>
     </table>
     <div class="container">
-      <div class="row" style="padding-bottom: 20px">
+      <div class="row pad-bottom-20">
         <%= link_to 'Back to home', welcome_index_path, class: "btn btn-outline-primary primary-font" %>
       </div>
     </div>
