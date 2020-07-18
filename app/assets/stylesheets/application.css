@@ -41,3 +41,14 @@
    transition: 0.5s;
    text-decoration: none;
 }
+
+/* media queries */
+@media only screen and (max-width: 600px) {
+   #album_search_bar {
+     text-align: center;
+     padding-bottom: 10px;
+   }
+   #add-album-btn {
+      text-align: center !important;
+   }
+ }
