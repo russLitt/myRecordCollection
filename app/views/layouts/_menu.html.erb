@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark">
     <% if user_signed_in? %>
-    <%= link_to 'My Record Collection', welcome_index_path, :class => 'navbar-brand primary-font', :style => "color:whitesmoke; font-size: 20px" %>
+    <%= link_to 'My Record Collection', welcome_index_path, :class => 'navbar-header primary-font navbar-brand', :style => "color:whitesmoke; font-size: 20px" %>
 
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
